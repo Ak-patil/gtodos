@@ -1,0 +1,36 @@
+<center><h1>Create Your Notes </h1></center>
+<div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+          <label>Your User Id*:</label>
+          {{input type="text" class="form-control" placeholder="Your User Id " value=userid autofocus="autofocus"}}
+      </div>
+      <div class="form-group">
+          <label>Notes title*:</label>
+          {{input type="text" class="form-control" placeholder="Notes Title " value=title autofocus="autofocus"}}
+      </div>
+
+       <div class="form-group">
+        <form>
+             <label>Notes Completed Status*:</label><br>
+            <label class="radio-inline"> 
+                <input type="radio" name="optradio" checked>True
+            </label>
+             <label class="radio-inline">
+                 <input type="radio" name="optradio">False
+             </label>
+        </form>
+      </div>
+      <button class="btn btn-success" {{action 'sendMessage'}} disabled="{{unless isValid 'disabled'}}">Create</button>
+    </div>
+
+  {{#if responseMessage}}
+      <div class="col-md-6">
+          <br/>
+          <div class="alert alert-success">
+              <h4>Thank you! Your Note is created.</h4>
+              <p>{{responseMessage}}</p>
+          </div>
+      </div>
+  {{/if}}
+</div>

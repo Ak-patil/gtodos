@@ -1,0 +1,19 @@
+<center><h1 >Notes</h1></center>
+
+{{#each model as |todos|}}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">UserId: {{todos.userId}}</h3>
+    </div>
+    <div class="panel-body">
+      <p class="cl"><b class="bd">Title:</b> {{todos.title}}</p>
+      <p class="cl"><b class="bd">Completed:</b> {{todos.completed}}</p>
+    </div>
+     <div class="panel-footer text-right">
+          {{#link-to 'create' library.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
+        </div>
+  </div>
+  
+{{/each}}
+{{outlet}}
