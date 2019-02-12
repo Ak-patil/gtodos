@@ -3,11 +3,11 @@
     <div class="col-md-6">
       <div class="form-group">
           <label>Your User Id*:</label>
-          {{input type="text" class="form-control" placeholder="Your User Id " value=userid autofocus="autofocus"}}
+          {{input type="text" class="form-control" placeholder="Your User Id " value=model.userId autofocus="autofocus"}}
       </div>
       <div class="form-group">
           <label>Notes title*:</label>
-          {{input type="text" class="form-control" placeholder="Notes Title " value=title autofocus="autofocus"}}
+          {{input type="text" class="form-control" placeholder="Notes Title " value=model.title autofocus="autofocus"}}
       </div>
 
        <div class="form-group">
@@ -21,7 +21,7 @@
              </label>
         </form>
       </div>
-      <button class="btn btn-success" {{action 'sendMessage'}} disabled="{{unless isValid 'disabled'}}">Create</button>
+      <button class="btn btn-success" {{action 'createnote' model}} >Create</button>
     </div>
 
   {{#if responseMessage}}

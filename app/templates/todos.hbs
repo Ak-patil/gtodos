@@ -10,8 +10,8 @@
       <p class="cl"><b class="bd">Completed:</b> {{todos.completed}}</p>
     </div>
      <div class="panel-footer text-right">
-          {{#link-to 'create' library.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
-          <button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
+          {{#link-to 'create' todos.Id class='btn btn-success btn-xs'}}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deletenote' todos}}>Delete</button>
         </div>
   </div>
   
