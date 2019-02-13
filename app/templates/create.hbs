@@ -1,40 +1,8 @@
 <center><h1>Create Your Notes </h1></center>
 <div class="row">
     <div class="col-md-6">
-      <div class="form-group">
-          <label>Your User Id*:</label>
-          {{input type="text" class="form-control" placeholder="Your User Id " value=model.userId autofocus="autofocus"}}
-      </div>
-      <div class="form-group">
-          <label>Notes title*:</label>
-          {{input type="text" class="form-control" placeholder="Notes Title " value=model.title autofocus="autofocus"}}
-      </div>
-
-       <div class="form-group">
-        <form>
-            
-                <strong>Notes Completed Status*:</strong> {{color-list}}
-                <p>
-                    <label>True</label>
-                    {{#radio-button name="basic-example" value="green" groupValue=color changed="colorChanged"}}
-                    {{/radio-button}}
-                    <label > False</label>
-                    {{#radio-button name="basic-example" value="blue" groupValue=color changed="colorChanged"}}
-                    {{/radio-button}}
-                </p>
-
-        </form>
-      </div>
-      <button class="btn btn-success" {{action 'createnote' model}} >Create</button>
+      {{#comn-view item=model}}
+      <button  class="btn btn-success" {{action 'createnote' model}} >Create</button>
+      {{/comn-view}}
     </div>
-
-  {{#if responseMessage}}
-      <div class="col-md-6">
-          <br/>
-          <div class="alert alert-success">
-              <h4>Thank you! Your Note is created.</h4>
-              <p>{{responseMessage}}</p>
-          </div>
-      </div>
-  {{/if}}
 </div>

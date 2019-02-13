@@ -3,6 +3,6 @@ import DS from 'ember-data';
 export default DS.Model.extend({
     userId: attr('string'),
     title: attr('string'),
-    completed:attr('string')
+    completed:attr('boolean')
 
 });
