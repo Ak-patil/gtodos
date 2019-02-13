@@ -40,6 +40,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-radio-button": "^1.2.4",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.4.0",
     "ember-welcome-page": "^3.2.0",
@@ -50,5 +51,8 @@
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
+  },
+  "dependencies": {
+    "ember-radio-buttons": "^4.1.0"
   }
 }

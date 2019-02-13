@@ -1,4 +1,4 @@
-<center><h1>Create Your Notes </h1></center>
+<center><h1>Edit Your Notes </h1></center>
 <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -12,27 +12,23 @@
 
        <div class="form-group">
         <form>
-            
-                <strong>Notes Completed Status*:</strong> {{color-list}}
-                <p>
-                    <label>True</label>
-                    {{#radio-button name="basic-example" value="green" groupValue=color changed="colorChanged"}}
-                    {{/radio-button}}
-                    <label > False</label>
-                    {{#radio-button name="basic-example" value="blue" groupValue=color changed="colorChanged"}}
-                    {{/radio-button}}
-                </p>
+             <label>Notes Completed Status*:</label><br>
+            <label id='label-red'>True</label>
+            {{radio-button name="aria-example" ariaLabelledby="label-red" value="true" groupValue=color}}
+
+            <label id='label-blue'>False</label>
+            {{radio-button name="aria-example" ariaLabelledby="label-blue" value="false" groupValue=color}}
 
         </form>
       </div>
-      <button class="btn btn-success" {{action 'createnote' model}} >Create</button>
+      <button class="btn btn-success" {{action 'savenote' model}} >Save Changes</button>
     </div>
 
   {{#if responseMessage}}
       <div class="col-md-6">
           <br/>
           <div class="alert alert-success">
-              <h4>Thank you! Your Note is created.</h4>
+              <h4>Thank you! Your Note is changed.</h4>
               <p>{{responseMessage}}</p>
           </div>
       </div>

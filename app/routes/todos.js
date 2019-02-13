@@ -1,6 +1,8 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
+  // router: Ember.inject.service(),
+
   model() {
     this._super(...arguments);
     return this.store.findAll('todos');
@@ -10,8 +12,12 @@ export default Route.extend({
       let confirmation=confirm("Are You Sure ?");
 
       if(confirmation){
-        todos.destroyReco0rd()
+        todos.destroyRecord();
       }
+    },
+
+    redirect(model) {
+      this.get('router').transitionTo('todos.edit', model.id);
     }
   }
 });
