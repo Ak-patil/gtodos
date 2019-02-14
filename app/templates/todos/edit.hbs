@@ -1,8 +1,7 @@
 <center><h1>Edit Your Notes </h1></center>
 <div class="row">
     <div class="col-md-6">
-    {{#comn-view item=model}}
-      <button class="btn btn-success" {{action 'savenote' model}} >Save Changes</button>
+    {{#comn-view item=model c="Save Changes" f="savenote"}}
     {{/comn-view}}
     </div>
 </div>

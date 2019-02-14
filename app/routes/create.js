@@ -19,16 +19,7 @@ export default Route.extend({
         //     this.controller.set('flavor',choice);
         //  },
 
-        createnote(model)
-        {  
-            model.save().then((res) => {
-                this.get('router').transitionTo('todos');
-            }).catch((err) => {
-                
-            })
-
-
-        }
+        
        
     }
 });
