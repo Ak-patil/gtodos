@@ -14,8 +14,7 @@
           <button class="btn btn-success btn-xs" {{action 'redirect' todos}}>Edit</button>
           <button class="btn btn-danger btn-xs" {{action 'deletenote' todos}}>Delete</button>
         </div>
+        {{outlet}}
   </div>
   
-  
 {{/each}}
-{{outlet}}
