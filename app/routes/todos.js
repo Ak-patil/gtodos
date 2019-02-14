@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  // router: Ember.inject.service(),
+  
 
   model() {
     this._super(...arguments);
