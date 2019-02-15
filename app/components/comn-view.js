@@ -1,42 +1,17 @@
 import Component from '@ember/component';
-
+import { inject } from '@ember/service';
 export default Component.extend({
-//  number: 'one',
-//  numbersDisabled: true,
-router: Ember.inject.service(),
+
+router:inject(),
 
 actions: {
     saveModel(model)
     {  
-        model.save().then((res) => {
+        model.save().then(() => {
             this.get('router').transitionTo('todos');
-        }).catch((err) => {
+        }).catch(() => {
             
         })
-
-
-    },
-  
-    // savenote(todos) {
-    //   todos.save()
-    //   .then(() => this.transitionTo('todos'));
-    // },
-
-    // willTransition(transition) {
-
-    //   let model = this.controller.get('model');
-
-    //   if (model.get('hasDirtyAttributes')) {
-    //     let confirmation = confirm("Your changes haven't saved yet. Would you like to leave this form?");
-
-    //     if (confirmation) {
-    //       model.rollbackAttributes();
-    //     } else {
-    //       transition.abort();
-    //     }
-    //   }
-    // }
+    },   
   }
-   
-
 });

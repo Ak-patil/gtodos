@@ -1,35 +1,15 @@
-        <div class="form-group">
-            <label>Your User Id*:</label>
-            {{input type="text" class="form-control" placeholder="Your User Id " value=item.userId autofocus="autofocus"}}
-        </div>
-        <div class="form-group">
-            <label>Notes title*:</label>
-            {{input type="text" class="form-control" placeholder="Notes Title " value=item.title autofocus="autofocus"}}
-        </div>
-
-        <div class="form-group">
-             <label>Notes Completed Status*:</label>
-            {{input type="text" class="form-control" placeholder="Notes status " value=item.completed autofocus="autofocus"}}
-
-
-            {{!-- <form>
-                 <strong>Notes Completed Status*:</strong> 
-                    <p>
-                        <label>True</label>
-                        {{#radio-button name="basic-example" value=true groupValue=numbersDisabled }}
-                        {{/radio-button}}
-                        <label > False</label>
-                        {{#radio-button name="basic-example" value=false groupValue=numbersDisabled }}
-                        {{/radio-button}}
-                    </p>
-            </form> --}}
-        </div>
-         <button  class="btn btn-success" {{action 'saveModel' item}} >{{btnText}}</button>
+<div class="form-group">
+  <label>Your User Id*:</label>
+  {{input type="text" class="form-control" placeholder="Your User Id " value=item.userId autofocus="autofocus"}}
+</div>
+<div class="form-group">
+  <label>Notes title*:</label>
+  {{input type="text" class="form-control" placeholder="Notes Title " value=item.title autofocus="autofocus"}}
+</div>
+<div class="form-group">
+  <label>Notes Completed Status*:</label>
+  {{input type="text" class="form-control" placeholder="Notes status " value=item.completed autofocus="autofocus"}}
+</div>
+<button  class="btn btn-success" {{action "saveModel" item}} >{{btnText}}</button>
 {{yield}}
 
-{{!-- {{#radio-button value=true groupValue=numbersDisabled}}<br>
-     &nbsp;&nbsp;Disabled<br>
-   \{{/radio-button}}<br>
-   \{{#radio-button value=false groupValue=numbersDisabled}}<br>
-     &nbsp;&nbsp;Enabled<br>
-   \{{/radio-button}}<br> --}}
