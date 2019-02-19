@@ -7,8 +7,10 @@
   {{input type="text" class="form-control" placeholder="Notes Title " value=item.title autofocus="autofocus"}}
 </div>
 <div class="form-group">
-  <label>Notes Completed Status*:</label>
-  {{input type="text" class="form-control" placeholder="Notes status " value=item.completed autofocus="autofocus"}}
+  <label>Notes Completed Status*:</label><br>
+  {{ui-radio name="optradio" label="Completed" value="completed" current=item.completed onChange=(action (mut item.completed))}} 
+  {{ui-radio name="optradio" label="Not-completed" value="not-completed" current=item.completed onChange=(action (mut item.completed))}}
+  {{ui-radio name="optradio" label="Draft " value="draft" current=item.completed onChange=(action (mut item.completed))}}
 </div>
 <button  class="btn btn-success" {{action "saveModel" item}} >{{btnText}}</button>
 {{yield}}
