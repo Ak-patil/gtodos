@@ -15,5 +15,6 @@
   {{ui-radio name="optradio" label="Draft " value="draft" current=item.completed onChange=(action (mut item.completed))}}
 </div>
 <button  class="btn btn-success" disabled={{isDisabled}} {{action "saveModel" item}} >{{btnText}}</button>
+
 {{yield}}
 

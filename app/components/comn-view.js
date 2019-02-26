@@ -1,26 +1,18 @@
 import Component from '@ember/component';
 import { inject } from '@ember/service';
-// import { match,not } from '@ember/object/computed';
-import { gte } from '@ember/object/computed';
-import { and } from '@ember/object/computed';
 import { empty } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+
 export default Component.extend({
-    // userId: '',
-    // title:'',
-    // isValidId:match('item.userId', /^[0-9]*$/),
-    // chk: not('isValidId'),
-    isUserId:empty('item.userId'),
-    // isUserId:empty('item.userId'),
-    isTitleLength:gte('item.title.length',  5),
-    isDisabled :Ember.computed.and('isTitleLength', 'isUserId'),
-   
+     isDisabled:empty('item.title'),
+     notifications: service('toast'),
+
 router:inject(),
 
 actions: {
     saveModel(model)
     {  
         if(!model.get('userId') || !model.get('title')) {
-            console.log("required field error");
             return ;
         }
         model.save().then(() => {
@@ -28,6 +20,8 @@ actions: {
         }).catch(() => {
             
         })
+        let notifications = this.get('notifications');
+        notifications.success('success');
     },   
     willTransition() {
         // rollbackAttributes() removes the record from the store
@@ -36,3 +30,4 @@ actions: {
       }
   }
 });
+
