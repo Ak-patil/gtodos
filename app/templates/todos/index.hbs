@@ -1,18 +1,29 @@
 <center><h1 >Notes</h1></center>
-{{#each model as |todos|}}
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">UserId: {{todos.userId}}</h3>
-    </div>
-    <div class="panel-body">
-      <p class="cl"><b class="bd">Title:</b> {{todos.title}}</p>
-      <p class="cl"><b class="bd">Completed:</b> {{todos.completed}}</p>
-    </div>
-    <div class="panel-footer text-right">
-      <button class="btn btn-success btn-xs" {{action "redirect" todos}}>Edit</button>
-      <button class="btn btn-danger btn-xs" {{action "deletenote" todos}}>Delete</button>
-    </div>
-    {{outlet}}
+  <div >
+    <table class="table" >
+      <tbody>
+        {{#each model as |todos|}}
+          {{#unless todos.isNew}}
+            <tr >
+              <td>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">UserId: {{todos.userId}}</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p class="cl"><b class="bd">Title:</b> {{todos.title}}</p>
+                    <p class="cl"><b class="bd">Completed:</b> {{todos.completed}}</p>
+                  </div>
+                  <div class="panel-footer text-right">
+                    <button class="btn btn-success btn-xs" {{action "redirect" todos}}>Edit</button>
+                    <button class="btn btn-danger btn-xs" {{action "deletenote" todos}}>Delete</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          {{/unless}}
+        {{/each}}
+        {{outlet}}
+      </tbody>
+    </table>
   </div>
-{{/each}}
-
