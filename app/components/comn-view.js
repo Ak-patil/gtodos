@@ -6,10 +6,12 @@ import { inject as service } from '@ember/service';
 export default Component.extend({
      isDisabled:empty('item.title'),
      notifications: service('toast'),
+    
 
 router:inject(),
 
 actions: {
+    
     saveModel(model)
     {  
         if(!model.get('userId') || !model.get('title')) {

@@ -6,10 +6,13 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {  this.route('todos', function() {
-  this.route('edit', {path:'edit/:id'});
-  });
+Router.map(function() {
+  this.route('todos', function() {
+    this.route('edit', {path:'edit/:todos_id'});
+    });
   this.route('create');
+  this.route('tableview');
+  this.route('table');
 });
 
 export default Router;

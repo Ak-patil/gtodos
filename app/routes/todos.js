@@ -22,7 +22,7 @@ export default Route.extend({
     
 
     redirect(model) {
-      this.get('router').transitionTo('todos.edit', model.id);
+      this.get('router').transitionTo('todos.edit', model);
       let notifications = this.get('notifications');
         notifications.info('Edit Your Todo');
     }
